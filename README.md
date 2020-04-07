@@ -1,1 +1,0 @@
-# hexo-themes-matery
