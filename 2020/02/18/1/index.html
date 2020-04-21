@@ -1,0 +1,1701 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Github + Hexo 搭建个人博客超详细教程, 操作系统的编译原理与实现">
+    <meta name="baidu-site-verification" content="5PrKBCgfjv">
+    <meta name="google-site-verification" content="Qf9NsGPLFU">
+    <meta name="360-site-verification" content>
+    <meta name="description" content="
+在搭建过程中遇到问题欢迎来骚扰我哈！ V：godxiaolong，QQ:1571504536，如果觉得有帮助的话不介意打赏一杯奶茶哟~
+
+前言
+作为一名计算机爱好者，摸索了一周搭建出自己的博客。目前只学    习了c语言，没有任何前端知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Github + Hexo 搭建个人博客超详细教程 | Tyzhao`s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6467661e352f791fd1354d7581d6ee8d";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+ 
+       <script>
+           (function(){
+               var bp = document.createElement('script');
+               var curProtocol = window.location.protocol.split(':')[0];
+               if (curProtocol === 'https') {
+                   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+               }
+               else {
+                  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+              }
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(bp, s);
+          })();
+      </script>
+ 
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Tyzhao`s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Tyzhao`s Blog</div>
+        <div class="logo-desc">
+            
+            派斯学院| C++|Java | Linux操作系统
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/muyiio" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/muyiio" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/35.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Github + Hexo 搭建个人博客超详细教程
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/Github/" target="_blank">
+                            <span class="chip bg-color">Github</span>
+                        </a>
+                        
+                        <a href="/tags/Hexo/" target="_blank">
+                            <span class="chip bg-color">Hexo</span>
+                        </a>
+                        
+                        <a href="/tags/博客搭建/" target="_blank">
+                            <span class="chip bg-color">博客搭建</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Blog/" class="post-category" target="_blank">
+                            Blog
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-18
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Tyzhao
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    16 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/01.png" alt></p>
+<p><font color="magenta" size="4"><strong>在搭建过程中遇到问题欢迎来骚扰我哈！<font color="red" size="4"> V：godxiaolong，QQ:1571504536</font>，如果觉得有帮助的话不介意打赏一杯奶茶哟~</strong></font></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/02.png" alt></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li><p>作为一名计算机爱好者，摸索了一周搭建出自己的博客。目前只学    习了c语言，没有任何前端知识和网站开发经验，总的来说，算不上很难，     但也要费些心思。网上各类教程应有尽有，只要肯摸索，还是水到渠成的事。另外，写下这篇文章，记录下自己的经验，给需要的朋友，祝你早日拥有自己的博客！</p>
+</li>
+<li><p>搭建博客的初衷是希望用博客记录下自己的学习过程，帮助自己复习，分享一部分不成熟的思考，敦促自己把既定的目标完成。</p>
+</li>
+<li><p><strong>为什么要搭建自己的博客？可以看看这三篇文章：</strong></p>
+</li>
+</ul>
+<p><a href="http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/" title="为什么你应该（从现在开始就）写博客" target="_blank" rel="noopener">《为什么你应该（从现在开始就）写博客》</a>   (By 刘未鹏 | Mind Hacks)</p>
+<p><a href="https://www.zhihu.com/question/19916345" title="为什么要自建博客？" target="_blank" rel="noopener">《为什么要自建博客？》</a>   (By 知乎)</p>
+<p><a href="https://www.cnblogs.com/jhzhu/p/3893297.html" title="我为什么写博客" target="_blank" rel="noopener">《我为什么写博客》</a> （By 知明所以）</p>
+<p>我们需要知道搭建博客要用到的框架。<font color="red" size="3">Hexo</font>是高效的静态站点生成框架，它基于<font color="red" size="3">Node.js</font>。我们使用<font color="red" size="3">MarkDown</font>在本地编辑我们的博客文章，通过<font color="red" size="3">Hexo</font>生成静态页面，再用两条命令即可部署到我们的网站。无需关心网页源代码的具体细节，我们只需要用心写好自己的博客内容就行。</p>
+<h2 id="本文目录"><a href="#本文目录" class="headerlink" title="本文目录"></a>本文目录</h2><ul>
+<li><strong>快速搭建</strong></li>
+<li>安装<font color="red" size="3">Node.js</font></li>
+<li>添加国内镜像</li>
+<li>安装<font color="red" size="3">Git </font></li>
+<li>注册<font color="red" size="3">Github</font>账号</li>
+<li>创建<font color="red" size="3">Git</font>仓库</li>
+<li>安装<font color="red" size="3">Hexo</font> </li>
+<li>配置本地<font color="red" size="3">Hexo</font></li>
+<li>连接<font color="red" size="3">Github</font>与本地 </li>
+<li>写文章、发布文章 </li>
+<li><font color="red" size="3">MarkDown</font>文章编辑器说明</li>
+<li>配置个性化域名</li>
+<li>更换自己喜欢的<font color="red" size="3">Hexo</font>主题</li>
+<li>我的博客源代码</li>
+<li>结语</li>
+</ul>
+<hr>
+<h1 id="快速搭建"><a href="#快速搭建" class="headerlink" title="快速搭建"></a>快速搭建</h1><p>有的朋友可能不想去折腾，自定义主题也比较麻烦，亦或有尝试几次搭建却失败，那就可以看这部分。快速搭建可以帮助我们更快搭建出自己的博客，优点是别人博客有的东西你都有，就跟复制差不多；缺点是博客里的配置信息都是别人的，不过不要紧，稍稍改改配置就可以。</p>
+<p>在这里以我的博客为例。</p>
+<h2 id="一、下载博客源代码"><a href="#一、下载博客源代码" class="headerlink" title="一、下载博客源代码"></a>一、下载博客源代码</h2><p>大家可以直接素质二连，<font color="red" size="3">Star&amp;Fork</font>我的博客源代码：<a href="https://github.com/MUYIio/Hexo-matery-Themes" target="_blank" rel="noopener">https://github.com/MUYIio/Hexo-matery-Themes</a>，这里我给出两种下载方法：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/03.png" alt></p>
+<p><strong>第一种</strong>：直接<font color="red" size="3">DownLoad</font>，下载到本地就可以。（<strong>不推荐</strong>）</p>
+<p><strong>第二种</strong>：如果你已经安装了<a href="https://git-scm.com/download/win" title="Git" target="_blank" rel="noopener">Git</a>，就可以右键单击<font color="red" size="3">Come Bash Here</font>运行<font color="red" size="3">git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:MUYIio/Hexo-matery-Themes.git</font>将所有文件下载到本地，这个复杂一点。</p>
+<h2 id="二、修改博客文档配置"><a href="#二、修改博客文档配置" class="headerlink" title="二、修改博客文档配置"></a>二、修改博客文档配置</h2><p>首先将我们下载的博客源代码解压，然后修改主要配置：</p>
+<ul>
+<li>根目录配置文件<font color="red" size="3">_config.yml</font>和主题目录配置文件<font color="red" size="3">_config.yml</font>中修改个人信息。</li>
+<li>根目录配置文件中修改<font color="red" size="3">deploy</font>一栏的<font color="red" size="3">repository</font>。</li>
+<li>根目录配置文件中修改<font color="red" size="3">baidu_url_submit</font>一栏的<font color="red" size="3">token</font>。</li>
+<li>主题配置文件中修改<font color="red" size="3">gitalk</font>一栏，修改方法见正文。</li>
+</ul>
+<p>我给出的是博客比较明显的几个地方，先修改这几个地方，其它的可以自己慢慢摸索修改。</p>
+<p>最后一步，<strong>本地的运行环境还是需要搭建好的</strong>，跟着下文操作到连接Github与本地，环境就算是搭建完成。</p>
+<p><strong>本地环境搭建好之后会生成的文件：</strong></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/35.png" alt></p>
+<p>然后直接把<font color="red" size="3">Hexo</font>文件夹删掉，把我的源代码的<font color="red" size="3">Hexo</font>文件夹移动过来：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/36.png" alt></p>
+<p>就是这样了：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/37.png" alt></p>
+<p>然后在<font color="red" size="3">Hexo</font>文件夹下右键单击鼠标，点击 <font color="red" size="3">Git Bash Here</font>点击输入以下命令上传就可以了：</p>
+<pre><code>hexo clean
+hexo g
+hexo d</code></pre><h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h1><p>了解一下什么是<font color="red" size="3">Node.js</font>：</p>
+<blockquote>
+<p><font color="red" size="3">Node.js</font>就是一个用于创建服务器端应用程序的运行系统，它可以轻松构建网络或其他事件驱动的应用程序服务器。</p>
+</blockquote>
+<p>需要用到的命令：</p>
+<pre><code>$ git --version
+$ node -v
+$ npm -v</code></pre><p><a href="https://nodejs.org/en/download/" title="Node.js" target="_blank" rel="noopener">点击此处</a>进入<font color="red" size="3">Node.js</font>官网下载相应版本即可，安装时选项全部默认，一路点击<font color="red" size="3">Next</font>。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/04.png" alt></p>
+<p>检验是否安装成功：<br>按<font color="red" size="3">Win+R</font>打开命令提示符，输入<font color="red" size="3">node -v</font>和<font color="red" size="3">npm -v</font>，如果出现版本号，那么就安装成功了。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/05.png" alt></p>
+<h1 id="添加国内镜像"><a href="#添加国内镜像" class="headerlink" title="添加国内镜像"></a>添加国内镜像</h1><p>这里我们使用阿里的国内镜像进行加速，按Win+R打开命令提示符输入：</p>
+<pre><code>npm config set registry https://registry.npm.taobao.org</code></pre><h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><blockquote>
+<p><font color="red" size="3">Git</font>是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理，帮助我们把本地网页上传到<font color="red" size="3">Github</font>。</p>
+</blockquote>
+<p><a href="https://git-scm.com/download/win" title="Git" target="_blank" rel="noopener">点击此处</a>进入Git官网下载相应版本，默认安装即可。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/005.png" alt></p>
+<p>参考资料：<a href="https://www.cnblogs.com/jytx/p/5602927.html" title="如何在windows下安装GIT" target="_blank" rel="noopener">《如何在windows下安装GIT》</a> (By 俊雨廷休)</p>
+<p>检验是否安装成功：</p>
+<p>安装完成后在命令提示符中输入<font color="red" size="3">git –version</font>验证是否安装成功</p>
+<pre><code>git --version</code></pre><p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/06.png" alt></p>
+<h1 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h1><p><font color="red" size="3">Github</font>作为全球最大的开源社区，相信朋友们都已经有了吧，如果没有，<a href="https://github.com/" title="Github" target="_blank" rel="noopener">点击此处</a>进入<font color="red" size="3">Github</font>官网点击 <font color="red" size="3">Sign Up </font>注册账户。</p>
+<h1 id="创建git仓库"><a href="#创建git仓库" class="headerlink" title="创建git仓库"></a>创建git仓库</h1><p>登录<font color="red" size="3">Github</font>创建一个仓库</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/07.png" alt></p>
+<p>如下图所示，<strong>输入自己的项目名字，后面一定要加<font color="red" size="3">.github.io</font>后缀，<font color="red" size="3">README</font>初始化也要勾上。名称一定要和你的<font color="red" size="3">Github</font>名字完全一样，比如你<font color="red" size="3">github</font>名字叫<font color="red" size="3">A</font>，那么仓库名字一定要是<font color="red" size="3">A.github.io</font>。</strong></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/08.png" alt></p>
+<p>选择一个自己喜欢的主题：<br>在上面创建的仓库里面点击<font color="red" size="3">Settings</font>（不是头像下面那个<font color="red" size="3">Settings</font>），向下拉到最后有个<font color="red" size="3">GitHub Pages</font>，点击<font color="red" size="3">Choose a theme</font>选择一个主题。然后等一会儿，再回到<font color="red" size="3">GitHub Pages</font>，就可以预览效果啦。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/09.png" alt></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/10.png" alt></p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><blockquote>
+<p><font color="red" size="3">Hexo</font>是一款基于<font color="red" size="3">Node.js</font>的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在<font color="red" size="3">GitHub</font>和<font color="red" size="3">Heroku</font>上，是搭建博客的首选框架。</p>
+</blockquote>
+<p>选择一个磁盘，新建一个文件夹用来存放博客文件。比如我的<font color="red" size="3">（C/panakot Blog）</font>，在该文件夹下右键单击鼠标，点击<font color="red" size="3"> Git Bash Here</font>，输入以下<font color="red" size="3"> npm </font>命令即可安装</p>
+<pre><code>$ npm install hexo-cli -g</code></pre><p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/11.png" alt></p>
+<p>输入<font color="red" size="3">hexo -v</font>即可检验是否安装成功，我这里就不演示了。</p>
+<h1 id="配置本地hexo"><a href="#配置本地hexo" class="headerlink" title="配置本地hexo"></a>配置本地hexo</h1><p>还是在刚才新建的文件夹下再新建一个<font color="red" size="3">Hexo</font>文件夹，比如我的<font color="red" size="3">（C/panakot Blog/Hexo）</font>，在<font color="red" size="3">Hexo</font>文件夹下右键单击鼠标，点击<font color="red" size="3"> Git Bash Here</font>，依次输入以下<font color="red" size="3"> npm </font>命令即可初始化。</p>
+<pre><code>hexo init
+npm install</code></pre><p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/12.png" alt></p>
+<p>初始化成功生成的文件：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/13.png" alt></p>
+<p>接着我们输入<font color="red" size="3">hexo g</font>生成静态网页，然后输入<font color="red" size="3">hexo s</font>打开本地服务器，然后浏览器打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，就可以预览我们的博客啦，如图：</p>
+<p>显示以下信息说明操作正确：</p>
+<p><code>INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</code></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/14.png" alt></p>
+<p>按<font color="red" size="3">ctrl+c</font>关闭本地服务器。</p>
+<p><strong>我们以后常用到的<font color="red" size="3">Hexo</font>命令：</strong></p>
+<ul>
+<li><p><font color="red" size="3">hexo s</font>等价于 <font color="red" size="3">hexo server</font>  #<font color="red" size="3">Hexo</font> 会监视文件变动并自动更新，除修改站点配置文件外,无须重启服务器,直接刷新网页即可生效。</p>
+</li>
+<li><p><font color="red" size="3">hexo g</font> 等价于 <font color="red" size="3">hexo generate</font>  #生成静态网页 (执行 $ <font color="red" size="3">hexo g</font>后会在站点根目录下生成<font color="red" size="3">public</font>文件夹,<font color="red" size="3"> hexo</font>会将”<font color="red" size="3">/blog/source/</font>“ 下面的<font color="red" size="3">.md</font>后缀的文件编译为<font color="red" size="3">.html</font>后缀的文件,存放在”<font color="red" size="3">/blog/public/ </font>“ 路径下)</p>
+</li>
+<li><p><font color="red" size="3">hexo d </font>等价于 <font color="red" size="3">hexo deploy</font>  #将本地数据部署到远端服务器(如<font color="red" size="3">github</font>)</p>
+</li>
+<li><p><font color="red" size="3">hexo clean </font> #清除缓存 ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的<font color="red" size="3">public</font>文件夹</p>
+</li>
+</ul>
+<h1 id="连接Github与本地"><a href="#连接Github与本地" class="headerlink" title="连接Github与本地"></a>连接Github与本地</h1><h2 id="一、生成密钥"><a href="#一、生成密钥" class="headerlink" title="一、生成密钥"></a>一、生成密钥</h2><p>右键单击鼠标，点击 <font color="red" size="3">Git Bash Here</font>输入以下命令：</p>
+<pre><code>git config --global user.name &quot;Name&quot;
+git config --global user.email &quot;Email&quot;</code></pre><p><strong><font color="red" size="3">Name</font>和<font color="red" size="3">Email</font>是我们注册<font color="red" size="3">Github</font>时的用户名和邮箱。</strong></p>
+<p>然后生成密钥：</p>
+<pre><code>ssh-keygen -t rsa -C &quot;Email&quot;</code></pre><p><strong><font color="red" size="3">Email</font>是我们注册<font color="red" size="3">Github</font>时的邮箱</strong></p>
+<p>然后会出现：</p>
+<pre><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):
+//到这里可以直接回车将密钥按默认文件进行存储</code></pre><p>回车之后：</p>
+<pre><code>Enter passphrase (empty for no passphrase):
+//这里是要你输入密码，其实不需要输什么密码，直接回车就行
+Enter same passphrase again:</code></pre><p>接下来会有：</p>
+<pre><code>Your identification has been saved in /c/Users/you/.ssh/id_rsa.
+Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.
+The key fingerprint is:
+这里是各种字母数字组成的字符串，结尾是你的邮箱
+The key&#39;s randomart image is:
+这里也是各种字母数字符号组成的字符串</code></pre><p>现在密钥已经生成，一般存放在<font color="red" size="3">（/c/Users/you/.ssh/id_rsa.pub.）</font>，我们运行下面的命令将密钥复制为粘贴板：</p>
+<pre><code> clip &lt; ~/.ssh/id_rsa.pub</code></pre><p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/15.png" alt></p>
+<h2 id="二、连接Github"><a href="#二、连接Github" class="headerlink" title="二、连接Github"></a>二、连接Github</h2><p>在<font color="red" size="3">Github</font>头像下面点击<font color="red" size="3">Settings</font>，再点击<font color="red" size="3">SSH and GPG keys</font>，新建一个<font color="red" size="3">SSH</font>，名字任意。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/16.png" alt></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/17.png" alt></p>
+<p>然后将刚才复制的密钥添加就可以了，像这样：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/18.png" alt></p>
+<p><strong>本地连接Github</strong></p>
+<p>右键单击鼠标，点击<font color="red" size="3"> Git Bash Here</font>输入以下命令，如果如下图所示，出现你的用户名，那就成功了</p>
+<pre><code>ssh -T git@github.com
+//注意不要做任何修改</code></pre><p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/19.png" alt></p>
+<p>用记事本打开博客根目录下的<font color="red" size="3">_config.yml</font>文件，这是博客的配置文件，我们需要修改一下才能连接<font color="red" size="3">Github</font>。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/20.png" alt></p>
+<p>修改最后一行的配置：</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type:</code></pre><p>改为：</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: git@github.com:panakot/panakot.github.io.git
+  branch: master</code></pre><p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/21.png" alt></p>
+<p>切记：</p>
+<ul>
+<li><strong><font color="red" size="3">repository</font>修改为你自己的<font color="red" size="3">github</font>项目地址</strong>。</li>
+<li><strong>每一个冒号后面都有一个空格。</strong></li>
+</ul>
+<h1 id="写文章、发布文章"><a href="#写文章、发布文章" class="headerlink" title="写文章、发布文章"></a>写文章、发布文章</h1><p>首先在博客根目录下右键打开<font color="red" size="3">Git Bash Here</font>输入以下命令，安装一个扩展.</p>
+<pre><code>npm i hexo-deployer-git</code></pre><p>然后输入下面的命令，新建一篇文章。</p>
+<pre><code>hexo new post &quot;article title&quot;</code></pre><p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/22.png" alt></p>
+<p>然后打开<font color="red" size="3">C:\panakot Blog\Hexo\source_posts</font>的目录，可以发现下面多了一个文件夹和一个<font color="red" size="3">.md</font>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/23.png" alt></p>
+<p>编写完<font color="red" size="3">markdown</font>文件后，根目录下右键打开<font color="red" size="3">Git Bash Here</font>输入<font color="red" size="3">hexo g</font>生成静态网页，然后输入<font color="red" size="3">hexo s</font>可以本地预览效果，最后输入<font color="red" size="3">hexo d</font>上传到<font color="red" size="3">github</font>上。</p>
+<p>你的博客地址：<font color="red" size="3">https://你的用户名.github.io</font>，比如我的是：<a href="https://muyiio.github.io" target="_blank" rel="noopener">https://muyiio.github.io</a>，现在每个人都可以通过此链接访问你的博客</p>
+<h1 id="MarkDown文章编辑器说明"><a href="#MarkDown文章编辑器说明" class="headerlink" title="MarkDown文章编辑器说明"></a>MarkDown文章编辑器说明</h1><blockquote>
+<p>前面我们提到了使用<font color="red" size="3">MarkDown</font>编辑我们的博客文章。<font color="red" size="3"> Markdown</font> 是<font color="red" size="3"> 2004</font> 年由 <font color="red" size="3">John Gruberis </font>设计和开发的纯文本格式的语法，非常的简单实用，常用的标记符号屈指可数，几分钟即可学会，<font color="red" size="3"> .md </font>文件可以使用支持 <font color="red" size="3">Markdown </font>语法的编辑器编辑，然后将写好的文章<font color="red" size="3">（.md文件）</font>保存到<font color="red" size="3"> \Hexo\source_posts </font>文件夹下即可。</p>
+</blockquote>
+<p> <font color="red" size="3">Windows </font>上推荐使用 <font color="red" size="3">MarkdownPad2 </font>或者<font color="red" size="3">小书匠</font>编辑器，<font color="red" size="3">macOS </font>上使用<font color="red" size="3"> Mou</font> 编辑器，<font color="red" size="3">Linux </font>上使用 <font color="red" size="3">Remarkable</font> 编辑器，<font color="red" size="3">Web </font>端上使用 简书。</p>
+<p><strong><a href="http://markdownpad.com/download.html" title="MarkDown" target="_blank" rel="noopener">点击此处</a>下载<font color="red" size="3">MarkDown</font><br>，刚使用的朋友或许不知道如何使用这个编辑器，只需要几分钟就可以掌握啦，给出以下几个我觉得不错的参考：</strong></p>
+<p><a href="https://www.jianshu.com/p/q81RER/" title="献给写作者的 Markdown 新手指南" target="_blank" rel="noopener">《献给写作者的 Markdown 新手指南》</a> （By 简书）</p>
+<p><a href="https://blog.csdn.net/u014061630/article/details/81359144?utm_source=app" title="Markdown语法图文全面详解" target="_blank" rel="noopener">《Markdown语法图文全面详解(10分钟学会)》</a>（By 黑暗星球）</p>
+<p><a href="https://blog.csdn.net/witnessai1/article/details/52551362?utm_source=app" title="Markdown 语法手册 （完整整理版）" target="_blank" rel="noopener">《Markdown 语法手册 （完整整理版）》</a> （By witnessai1）</p>
+<p><a href="https://sspai.com/post/25137" title="认识与入门 Markdown" target="_blank" rel="noopener">《认识与入门 Markdown》</a>（By Te_Lee）</p>
+<p>写完文章记得在博客根目录<font color="red" size="3">Bash Here</font>输入<font color="red" size="3">hexo g</font>和<font color="red" size="3">hexo d</font>上传到网站。</p>
+<h1 id="配置个性化域名"><a href="#配置个性化域名" class="headerlink" title="配置个性化域名"></a>配置个性化域名</h1><p>一顿操作下来，打开我们的博客还是：<font color="red" size="3"><a href="http://www.xxx.github.io" target="_blank" rel="noopener">www.xxx.github.io</a></font>，是不是很没有牌面？我们可以考虑购买一个专属域名，以后打开博客就是这样：<font color="red" size="3"><a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> </font>。</p>
+<p><a href="https://www.aliyun.com/" title="阿里云" target="_blank" rel="noopener">阿里云</a>和<a href="https://cloud.tencent.com/" title="腾讯云" target="_blank" rel="noopener">腾讯云</a>都可以，我的是腾讯云，购买域名后首先需要添加解析：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/24.png" alt></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/25.png" alt></p>
+<p><strong>方法一：</strong>点击添加记录，需要添加两个记录，两个记录类型都是 <font color="red" size="3">CNAME </font>，第一个主机记录为<font color="red" size="3"> @ </font>，第二个主机记录为<font color="red" size="3"> www</font>，记录值都是填你自己的博客地址（比如我的是：<font color="red" size="3">muyiio.github.io</font>），保存之后域名解析就完成了！</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/27.png" alt></p>
+<p><strong>方法二：</strong>两个记录类型为<font color="red" size="3"> A </font>，第一个主机记录为<font color="red" size="3"> @ </font>，第二个主机记录为<font color="red" size="3"> www</font>，记录值都为博客的<font color="red" size="3"> IP</font> 地址，<font color="red" size="3">IP </font>地址可以<font color="red" size="3"> cmd</font> 中输入<font color="red" size="3"> ping</font> 你的博客地址 获得（比如我的：<font color="red" size="3">ping muyiio.github.io</font>），保存之后域名解析就完成了！</p>
+<p>参考资料：</p>
+<p><a href="https://blog.csdn.net/it_man/article/details/9017307" title="域名解析中A记录、CNAME、MX记录、NS记录的区别和联系" target="_blank" rel="noopener">《域名解析中A记录、CNAME、MX记录、NS记录的区别和联系》</a></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/26.png" alt></p>
+<p><strong>不管在哪个平台购买域名，操作都大同小异，这里说明两点</strong>：</p>
+<blockquote>
+<p>如果你填写的是没有<font color="red" size="3">www</font>的，比如 <font color="red" size="3">muyio.com</font>，那么无论是访问<font color="red" size="3"> <a href="https://www.muyiio.com" target="_blank" rel="noopener">https://www.muyiio.com</a> </font>还是<font color="red" size="3"> <a href="https://muyiio.com">https://muyiio.com</a></font> ，都会自动跳转到<font color="red" size="3"> <a href="https://muyiio.com">https://muyiio.com</a></font>。</p>
+</blockquote>
+<blockquote>
+<p>如果你填写的是带<font color="red" size="3">www</font>的，比如 <font color="red" size="3"><a href="http://www.muyiio.com" target="_blank" rel="noopener">www.muyiio.com</a> </font>，那么无论是访问 <font color="red" size="3"><a href="https://www.muyiio.com" target="_blank" rel="noopener">https://www.muyiio.com</a></font> 还是 <font color="red" size="3"><a href="https://muyiio.com">https://muyiio.com</a> </font>，都会自动跳转到 <font color="red" size="3"><a href="http://www.imuyiio.com" target="_blank" rel="noopener">http://www.imuyiio.com</a></font>。</p>
+</blockquote>
+<p>然后打开你的<font color="red" size="3">github</font>博客项目，点击settings，拉到下面<font color="red" size="3">Custom domain</font>处，填上你自己的域名，保存就可以了。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/28.png" alt></p>
+<p>现在我们的项目根目录应该会出现一个名为<font color="red" size="3">CNAME</font>的文件了。如果没有的话，打开你本地博客<font color="red" size="3">/source</font>目录，我的是<font color="red" size="3">C:\Blog\Hexo\source</font>，新建<font color="red" size="3">CNAME</font>文件，<font color="red" size="3">（注意不要加.txt，没有任何后缀名！）</font>。然后在里面写上你的域名，保存。最后运行<font color="red" size="3">hexo g、hexo d</font>上传到<font color="red" size="3">github</font>。</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/29.png" alt></p>
+<p>现在就可以通过我们的个性化域名：<font color="red" size="3"><a href="http://www.xxx.com、xxx.com" target="_blank" rel="noopener">www.xxx.com、xxx.com</a></font>访问自己的博客了。</p>
+<h1 id="更换自己喜欢的Hexo主题"><a href="#更换自己喜欢的Hexo主题" class="headerlink" title="更换自己喜欢的Hexo主题"></a>更换自己喜欢的Hexo主题</h1><p>点击进入<a href="https://hexo.io/themes/" title="Hexo主题专栏" target="_blank" rel="noopener">Hexo主题专栏</a>可以看到很多<font color="red" size="3">Hexo</font>主题：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/30.png" alt></p>
+<p>推荐：</p>
+<p><a href="https://blog.csdn.net/fail_perfectly/article/details/83791781?utm_source=app" title="几个好用的hexo主题" target="_blank" rel="noopener">几个好用的hexo主题</a> (By fail_perfectly)</p>
+<p>这里我们以<a href="http://huangxuan.me/" title="Bean Tech" target="_blank" rel="noopener">Bean Tech</a>主题为例，下滑到底部我们可以看到他的<font color="red" size="3">GitHub</font>（<font color="red" size="3">有的主题是：Theme by xxx，点击那里也是进入GitHub地址</font>）：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/31.png" alt></p>
+<p>点击进入主题的<font color="red" size="3">GitHub</font>地址：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/32.png" alt></p>
+<p>复制该项目地址：</p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/33.png" alt></p>
+<p>然后打开<font color="red" size="3"> Hexo </font>文件夹下的<font color="red" size="3"> themes</font> 目录（如：<font color="red" size="3">C:\MUYIio Blog\Hexo\themes</font>），右键<font color="red" size="3"> Git Bash Here</font>，输入以下命令：</p>
+<pre><code>$ git clone 此处填写你刚才复制的主题地址</code></pre><p>以我们刚才复制的为例：</p>
+<pre><code>$ git clone https://github.com/Huxpro/huxpro.github.io</code></pre><p>下载完成后即可在<font color="red" size="3"> themes </font>目录下生成 <font color="red" size="3">hexo-theme-Bean-Tech </font>文件夹，然后打开 <font color="red" size="3">Hexo</font> 文件夹下的配置文件 <font color="red" size="3">_config.yml </font>，找到关键字 <font color="red" size="3">theme</font>，修改参数为：<font color="red" size="3">theme：hexo-theme-Bean-Tech </font>（其他主题修改成相应名称即可），<strong>再次注意冒号后面有一个空格！</strong></p>
+<p><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/_posts/1/34.png" alt></p>
+<p>现在我们的主题已经替换完成，将它部署到我们的博客，博客根目录下右键<font color="red" size="3"> Git Bash Here</font>，输入以下命令：</p>
+<pre><code>hexo clean
+hexo g
+hexo d</code></pre><p>现在访问我们的网站就可以看到主题已经更换了，但是比如网站标题，图标等都没有更换，我们博客文件中有两份主要的配置文件，名称都是 <font color="red" size="3">_config.yml</font> ，它们均是用于站点配置使用的。其中，一份位于站点根目录下（比如我的：<font color="red" size="3">C:\MUYIio Blog\Hexo_config.yml</font>），主要包含<font color="red" size="3"> Hexo</font> 本身整站的配置；另一份位于主题目录下（比如我的：<font color="red" size="3">C:\MUYIio Blog\Hexo\themes\hexo-theme-matery_config.yml</font>），这份配置由主题作者提供，主要用于配置主题相关的选项，一般<font color="red" size="3"> _config.yml </font>文件里都有相关注释，按需修改即可。</p>
+<h1 id="我的博客源代码"><a href="#我的博客源代码" class="headerlink" title="我的博客源代码"></a>我的博客源代码</h1><p><strong>我的博客源代码地址：<a href="https://github.com/MUYIio/Hexo-matery-Themes" target="_blank" rel="noopener">https://github.com/MUYIio/Hexo-matery-Themes</a>，有心的话可以给个<font color="red" size="3">Star&amp;Fork</font>。</strong></p>
+<p>在文章开头给出了快速搭建教程，相对于自己从头开始搭建还是比较方便的，修复了很多<font color="red" size="3">Bug</font>，也添加了一些插件，下载就可以使用，可以帮你们省去个性化配置带来的很多麻烦。</p>
+<p>主题的原地址在这里：<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">hexo-theme-matery</a>，作者把文档写得也非常的详细，还有中英文两个版本，建议可以多看几遍，在本地修改的时候轻松一些。</p>
+<p>使用我的源代码之前本地的环境还是要搭建好，就是前面一部分。</p>
+<table><tr><td bgcolor="orange">
+-----------------------------------------------------------------------------------------------------------                                                                                                                                                                                                            
+</td></tr></table>
+
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>初学者可能会觉得困难，毕竟很多东西都是第一次接触，当初我也尝试了好几次才成功，不要放弃，弄错了就删掉重新来过，当你把博客搭建出来会觉得受益良多的。</p>
+<p>文章中难免有错误的地方，有大佬发现了欢迎给我指正！有的地方解释不够详细，可以百度一下看看细节，文章中的引用以及参考资料涉及侵权请联系我删除！</p>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯奶茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《Github + Hexo 搭建个人博客超详细教程》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/18/1/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                Tyzhao
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'muyiio.github.io',
+        owner: 'MUYIio',
+        admin: "MUYIio",
+        id: '2020/02/18/1/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/02/18/1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="Github + Hexo 搭建个人博客超详细教程">
+                        
+                        <span class="card-title">Github + Hexo 搭建个人博客超详细教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            搭建博客的初衷是希望用博客记录下自己的学习过程，帮助自己复习。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Blog/" class="post-category" target="_blank">
+                                    Blog
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Github/" target="_blank">
+                        <span class="chip bg-color">Github</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/博客搭建/" target="_blank">
+                        <span class="chip bg-color">博客搭建</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/18/1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="Github + Hexo 搭建个人博客超详细教程">
+                        
+                        <span class="card-title">Github + Hexo 搭建个人博客超详细教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            搭建博客的初衷是希望用博客记录下自己的学习过程，帮助自己复习。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Blog/" class="post-category" target="_blank">
+                                    Blog
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Github/" target="_blank">
+                        <span class="chip bg-color">Github</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/博客搭建/" target="_blank">
+                        <span class="chip bg-color">博客搭建</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Tyzhao`s Blog<br />'
+            + '作者: Tyzhao<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+       <div class="Copy-right">
+            &copy; 2020 MUYIio. All Rights Reserved.
+
+           <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP">
+           <a href="http://www.beian.miit.gov.cn/" target="_blank">渝ICP备20002309号-1</a>丨
+           <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/moeicp.png" style="width:18px;height:18px;margin-bottom:-3px" alt="MOE ICP">
+           <a href="https://icp.gov.moe/" target="_blank">萌ICP备2020999999号</a>丨            
+           <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
+           
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">4.3k
+             丨            
+            <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
+           <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><br>
+
+            <span id="sitetime"></span>
+
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-users"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="red-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+               人次,&nbsp;<i class="fa fa-user"></i>访客数 <span id="busuanzi_value_site_uv" class="blue-color"></span> 人.
+            </span>
+            
+            
+        </div>        
+        <div class="social-link social-statis">
+    <a href="https://github.com/MUYIio" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="https://www.csdn.net/weixin_45682081" class="tooltipped" target="_blank" data-tooltip="访问我的CSDN主页" data-position="top" data-delay="50">
+        <i class="fa fa-codiepie"></i>
+    </a>
+
+
+
+    <a href=zhihu.com/people/muyiio" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="https://user.qzone.qq.com/1571504536" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="mailto:1571504536@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+    <div class="container row center-align">
+
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 01, 01, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+    <script type="text/javascript" src="/libs/others/snow.js"></script>
+    
+
+   <!--单击显示文字-->
+   <script type="text/javascript" src="/js/click_show_text.js"></script> 
+
+   <!--动态线条背景-->
+   <script type="text/javascript"
+   color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+   </script>
+
+   <script async src =“ https://cdn.jsdelivr.net/npm/perfops-rom”> </ script>
+
+  <script type="text/javascript">
+   var windowWidth = $(window).width();
+   if (windowWidth > 768) {
+       document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+   }
+  </script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
