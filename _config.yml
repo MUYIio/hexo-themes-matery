@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Tyzhao`s Blog
-subtitle: godxiaolong
-description: 派斯学院| C++|Java | Linux操作系统
-keywords: "操作系统的编译原理与实现"
+title: Shawlon`s Blog
+subtitle: Yshawlon
+description: C++ | LeetCode | Algorithm 
+keywords: "被动学习"
 author: Tyzhao
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://muyiio.com
+url: http://118.25.27.52.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -113,13 +113,14 @@ theme: matery
 deploy:
 - type: git
   repository:
-    github: git@github.com:MUYIio/hexo-themes-matery.git
-    #coding: git@e.coding.net:godxiaolon/godxiaolon.git
+    github: git@github.com:MUYIio/MUYIio.github.io.git
+    #coding: 
+    #repo: 
   branch: master
 - type: baidu_url_submitter
 
 live2d:
-  enable: true
+  enable: false
   scriptFrom: local
   pluginRootPath: live2dw/
   pluginJsPath: lib/
@@ -139,8 +140,11 @@ live2d:
 
 baidu_url_submit:
   count: 100
-  host: 
+  host: www.yshawlon.cn
   token: 
   path: baidu_urls.txt
 
+#Daovoice DaoCloud 在线沟通
+daovoice: true
+daovoice_app_id:  #“用户ID” //注意：用户ID不能是其他人的，要填写自己的，可以在刚刚复制的代码中找到用户id.
 

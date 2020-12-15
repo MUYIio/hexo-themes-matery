@@ -76,7 +76,10 @@ video:
 # Whether to display the title of the recommended posts
 # 是否显示推荐文章的标题
 recommend:
+  enable: true
   showTitle: true
+  useConfig: false # 是否使用配置文件, 在 _data/recommends.json 下配置推荐文章, false则会走主题配置的 top 属性
+  # useConfig 使用方式: 将主题 hexo-theme-matery/source/_data/recommends.json 移动到 my-blog/source/_data/下修改配置即可
 
 # Configure website favicon and LOGO
 # 配置网站favicon和网站LOGO
@@ -166,9 +169,9 @@ text:
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
-  avatar: /medias/avatars/avatar.jpg
-  career: 派斯学院 | 计算机科学与技术 | 操作系统
-  introduction: 我是派斯学院计算机科学与技术专业2019本科生在读。对计算机操作系统颇感兴趣，欢迎与我交流探讨！
+  avatar: /medias/avatar.jpg
+  career: 计算机科学与技术 | C++ | Algorithms
+  introduction: 一个简单的个人博客，记录一下学习过程，欢迎你来到我的小站，有问题可以联系我，也欢迎与我交流探讨！
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
@@ -191,30 +194,18 @@ myProjects:
 mySkills:
   enable: true
   data:
-    Algorithm:
-      background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 90%
     C++:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
       percent: 80%
     Python:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 80%
-    Pytorch:
-      background: 'linear-gradient(to right, #951213 0%, #961117 100%)'
-      percent: 75%
-    Dynet:
-      background: 'linear-gradient(to right, #F12F12 0%, #F6464F 100%)'
-      percent: 75%
     Java:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 50%
     SQL:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
       percent: 50%
-    HTML:
-      background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 45%
 
 # config gallery of my photos in about page.
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
@@ -237,8 +228,8 @@ gitalk:
   owner: MUYIio
   repo: muyiio.github.io
   oauth:
-    clientId: 46697bb9a799731534b2
-    clientSecret: ac29f07978ab5621be57c136fb8334e56611d9c9
+    clientId: 
+    clientSecret: 
   admin: MUYIio
 
 # the Gitment config，default disabled
@@ -270,7 +261,7 @@ valine:
   enable: true
   appId: 
   appKey: 
-  notify: false
+  notify: true
   verify: false
   visitor: false
   avatar: 'wavatar' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
@@ -358,36 +349,7 @@ featureImages:
 - /medias/featureimages/8.jpg
 - /medias/featureimages/9.jpg
 - /medias/featureimages/10.jpg
-- /medias/featureimages/11.jpg
-- /medias/featureimages/12.jpg
-- /medias/featureimages/13.jpg
-- /medias/featureimages/14.jpg
-- /medias/featureimages/15.jpg
-- /medias/featureimages/16.jpg
-- /medias/featureimages/17.jpg
-- /medias/featureimages/18.jpg
-- /medias/featureimages/20.jpg
-- /medias/featureimages/21.jpg
-- /medias/featureimages/22.jpg
-- /medias/featureimages/23.jpg
-- /medias/featureimages/24.jpg
-- /medias/featureimages/25.jpg
-- /medias/featureimages/26.jpg
-- /medias/featureimages/27.jpg
-- /medias/featureimages/28.jpg
-- /medias/featureimages/29.jpg
-- /medias/featureimages/30.jpg
-- /medias/featureimages/31.jpg
-- /medias/featureimages/32.jpg
-- /medias/featureimages/33.jpg
-- /medias/featureimages/34.jpg
-- /medias/featureimages/35.jpg
-- /medias/featureimages/36.jpg
-- /medias/featureimages/37.jpg
-- /medias/featureimages/38.jpg
-- /medias/featureimages/39.jpg
-- /medias/featureimages/40.jpg
-- /medias/featureimages/41.jpg
+
 
   # default configs that the default policy for every articles/posts
   # default 配置文章的默认转载规则
@@ -415,6 +377,6 @@ reprint:
 
 # 雪花特效
 snow:
-  enable: true
+  enable: false
 
 baidu_push: true

@@ -1,9 +1,9 @@
 [
   {
-    "name": "Hexo+Github个人博客搭建美化",
+    "name": "Hexo博客搭建",
     "url": "https://zhuanlan.zhihu.com/c_1215655729367113728",
     "title": "访问主页",
-    "introduction": "我的知乎专栏，欢迎大家关注",
+    "introduction": "我的知乎博客搭建专栏，欢迎大家关注",
     "avatar": "/medias/avatars/myzhihu.png"
   },
   {
@@ -12,5 +12,27 @@
     "title": "访问主页",
     "introduction": "我的CSDN主页，欢迎大家关注！",
     "avatar": "/medias/avatars/csdn.ico"
+  },
+  {
+    "name": "陈YF的博客",
+    "url": "https://blog.cyfan.top",
+    "title": "访问主页",
+    "introduction": "一个在互联网角落挣扎的小小博客，很小很小。",
+    "avatar": "https://blog.cyfan.top/pic/BLOGER.jpg"
+  },
+  {
+    "name": "DylanLi",
+    "url": "https://cloudguest.cn",
+    "title": "前去学习",
+    "introduction": "人在少年，梦中不觉，醒后要归去。",
+    "avatar": "https://my-markdown-picbed.oss-cn-qingdao.aliyuncs.com/DylanBlog/logo2.jpg"
+  },
+  {
+    "name": "框架师",
+    "url": "https://www.mobaijun.com",
+    "title": "前去学习",
+    "introduction": "墨白",
+    "avatar": "https://www.mobaijun.com/medias/avatar.jpg"
   }
+
 ]

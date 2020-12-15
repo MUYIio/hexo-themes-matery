@@ -22,6 +22,6 @@ layout: "contact"
 
 例如我的博客友链，大家可以加到自己博客里哦：
 * **名称：**godxiaolong
-* **地址：**https://muyiio.com
-* **简介：**智障程序猿
+* **地址：**https://www.yashwlon.com
+* **简介：**Yshawlon
 * **头像：**https://muyiio.com/medias/avatars/avatar.jpg

@@ -20,6 +20,12 @@
         max-width: 1125px;
     }
 
+    .head-container {
+        position: absolute;
+        padding: 0px 30px;
+        width: 100%;
+    }
+
     .post-container {
         width: 90%;
         margin: 0 auto;
@@ -92,9 +98,35 @@ blockquote {
     background-color: rgba(66, 185, 131, .1);
 }
 
+.line-numbers-rows {
+    border-right-width: 0px !important;
+}
+
+.line-numbers {
+    padding: 1.5rem 1.5rem 1.5rem 3.5rem !important;
+    margin: 1rem 0 !important;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.35rem;
+    tab-size: 4;
+}
+
 pre {
     /* padding: 1.5rem !important; */
     padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
+    margin: 1rem 0 !important;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.35rem;
+    tab-size: 4;
+}
+
+.line-numbers-rows {
+    border-right-width: 0px !important;
+}
+
+.line-numbers {
+    padding: 1.5rem 1.5rem 1.5rem 3.5rem !important;
     margin: 1rem 0 !important;
     background: #272822;
     overflow: auto;
@@ -268,13 +300,16 @@ mark {
 }
 
 .card .card-image img {
-    border-radius: 5px 5px 0 0;
+    border-radius: 8px 8px 0 0;
+    /* 修改文章列表图片填充样式为 cover 以覆盖整个区域而不会被缩放 */
+    object-fit: cover;
 }
 
 .container .row {
     margin-bottom: 0;
 }
 
+/*整体背景颜色，包括导航，移动导航，页脚，选项卡等。*/
 .bg-color {
     background-image: linear-gradient(to right, #bf30ac 0%, #0f9d58 100%);
     opacity: 0.7;
@@ -426,6 +461,107 @@ header .side-nav .social-link {
 .cover-btns a i {
     font-size: 1.1rem;
     padding-right: 5px;
+}
+
+.scroll-down {
+    background: #333;
+    margin: 100px auto;
+    -webkit-animation: scroll-down 1.5s infinite;
+    -moz-animation: scroll-down 1.5s infinite;
+    -o-animation: scroll-down 1.5s infinite;
+    animation: scroll-down 1.5s infinite;
+}
+
+@-moz-keyframes scroll-down {
+    0% {
+        opacity: 0.4;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        top: 0;
+    }
+
+    50% {
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+        top: -16px;
+    }
+
+    100% {
+        opacity: 0.4;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        top: 0;
+    }
+}
+
+@-webkit-keyframes scroll-down {
+    0% {
+        opacity: 0.4;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        top: 0;
+    }
+
+    50% {
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+        top: -16px;
+    }
+
+    100% {
+        opacity: 0.4;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        top: 0;
+    }
+}
+
+@-o-keyframes scroll-down {
+    0% {
+        opacity: 0.4;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        top: 0;
+    }
+
+    50% {
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+        top: -16px;
+    }
+
+    100% {
+        opacity: 0.4;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        top: 0;
+    }
+}
+
+@keyframes scroll-down {
+    0% {
+        opacity: 0.4;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        top: 0;
+    }
+
+    50% {
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+        top: -16px;
+    }
+
+    100% {
+        opacity: 0.4;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        top: 0;
+    }
 }
 
 .cover-social-link {
@@ -959,7 +1095,7 @@ article .article-tags .chip {
 }
 
 #artDetail .article-tag {
-    float: left;
+    float: weight;
 }
 
 #artDetail .article-tag .chip {

@@ -7,7 +7,7 @@ layout: "friends"
 
 # 赞赏名单
 感谢所有赞赏过我的小伙伴啦，你们的支持是我最大的动力！
-
+`panakot`
 
 # 友链交换
 想要交换友链的小伙伴，欢迎在留言板留言，留言格式：
@@ -17,7 +17,7 @@ layout: "friends"
 * **头像：**你的头像地址
 
 例如我的博客友链，大家可以加到自己博客里哦：
-* **名称：**godxiaolong
-* **地址：**https://muyiio.com
-* **简介：**智障程序猿
-* **头像：**https://muyiio.com/medias/avatars/avatar.jpg
+* **名称：**Tyzhao
+* **地址：**https://www.muyiio.com
+* **简介：**Yshawlon
+* **头像：**https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E5%85%B6%E5%AE%83/favicon.png
