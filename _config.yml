@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://118.25.27.52.cn
+url: #https://www.yshawlon.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -140,11 +140,10 @@ live2d:
 
 baidu_url_submit:
   count: 100
-  host: www.yshawlon.cn
+  host: #www.yshawlon.cn
   token: 
   path: baidu_urls.txt
 
-#Daovoice DaoCloud 在线沟通
-daovoice: true
-daovoice_app_id:  #“用户ID” //注意：用户ID不能是其他人的，要填写自己的，可以在刚刚复制的代码中找到用户id.
+
+
 
