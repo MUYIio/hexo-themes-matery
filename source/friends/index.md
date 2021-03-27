@@ -20,4 +20,4 @@ layout: "friends"
 * **名称：**Tyzhao
 * **地址：**https://www.muyiio.com
 * **简介：**Yshawlon
-* **头像：**https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E5%85%B6%E5%AE%83/favicon.png
+* **头像：**https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg

@@ -3,15 +3,13 @@
        <div class="Copy-right">
             &copy; 2020 Yshawlon. All Rights Reserved.
 
-           <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP">
-           <a href="http://www.beian.miit.gov.cn/" target="_blank">ICP备----号-1</a>丨
-           <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/moeicp.png" style="width:18px;height:18px;margin-bottom:-3px" alt="MOE ICP">
-           <a href="https://icp.gov.moe/" target="_blank">萌ICP备-----号</a>丨            
+                    
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            <% if (theme.wordCount.enable && theme.wordCount.totalCount) { %>
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
             <span class="white-color"><%= totalcount(site) %>
             <% } %> 丨            
+          
 
             <span id="sitetime"></span>
 
@@ -32,6 +30,44 @@
             <% } %>
         </div>        
         <div class="social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+    </div>
+    <div class="container row center-align">
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+      <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+      <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.cloud.tencent.com/" target="_blank" title="腾讯云提供域名相关服务">
+      <span class="badge-subject">DNS</span><span class="badge-value bg-blueviolet">Tencent cloud</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+      <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+    </div>
+    <div class="github-badge">
+        <a style="color: #fff" rel="license" href="https://github.com/blinkfox/hexo-theme-matery/" target="_blank" title="站点使用 Matery 主题">
+      <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Matery</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+      <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="支持 996.ICU">
+      <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet"><%= totalcount(site) %></span>
     </div>
 </footer>
 

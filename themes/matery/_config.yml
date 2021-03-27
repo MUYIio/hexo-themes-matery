@@ -93,7 +93,7 @@ indexbtn:
   enable: true
   name: Github
   icon: fa-github-alt
-  url: https://github.com/muyiio
+  url: https://github.com/MUYIio/hexo-themes-matery
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
@@ -126,7 +126,6 @@ reward:
   title: 写作不易，客官能否打赏一杯奶茶？
   wechat: /medias/reward/wechat.png
   alipay: /medias/reward/alipay.jpg
-
 # Whether to activate the copyright information of the blog and author when copying the post content.
 # minCharNumber: Approve copyright information by copying at least how many characters.
 # 是否激活复制文章时追加博客和作者的版权信息.
@@ -169,9 +168,9 @@ text:
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
-  avatar: /medias/avatar.jpg
+  avatar: https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E5%A4%B4%E5%83%8F/%E5%A4%B4%E5%83%8F.jpg
   career: 计算机科学与技术 | C++ | Algorithms
-  introduction: 一个简单的个人博客，记录一下学习过程，欢迎你来到我的小站，有问题可以联系我，也欢迎与我交流探讨！
+  introduction: 一个简单的个人博客，记录一下学习过程，欢迎你来到我的小站，有不对的地方欢迎指正！有问题可以联系我，也欢迎与我交流探讨！
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
@@ -186,8 +185,6 @@ myProjects:
       desc: 我的个性化配置过的博客源码，即下即用。
 
 
-
-
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的技能"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
@@ -199,23 +196,23 @@ mySkills:
       percent: 80%
     Python:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 80%
+      percent: 50%
     Java:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
-      percent: 50%
+      percent: 40%
     SQL:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 50%
+      percent: 30%
 
 # config gallery of my photos in about page.
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myGallery:
-  enable: false
+  enable: true
   data:
+    - /medias/featureimages/0.jpg
+    - /medias/featureimages/1.jpg
     - /medias/featureimages/2.jpg
-    - /medias/featureimages/5.jpg
-    - /medias/featureimages/6.jpg
 
 # Whether to display post-calender in the `archive` page
 # 设置在归档页面中是否显示'文章日历'控件
@@ -290,7 +287,7 @@ verifyPassword:
 # 不蒜子(http://busuanzi.ibruce.info/) 网站统计
 busuanziStatistics:
   enable: true
-  totalTraffic: true # 总访问量
+  totalTraffic: true# 总访问量
   totalNumberOfvisitors: true # 总人次
 
 # Add google analytics configuration
@@ -349,8 +346,19 @@ featureImages:
 - /medias/featureimages/8.jpg
 - /medias/featureimages/9.jpg
 - /medias/featureimages/10.jpg
-
-
+- /medias/featureimages/11.jpg
+- /medias/featureimages/12.jpg
+- /medias/featureimages/13.jpg
+- /medias/featureimages/14.jpg
+- /medias/featureimages/15.jpg
+- /medias/featureimages/16.jpg
+- /medias/featureimages/17.jpg
+- /medias/featureimages/18.jpg
+- /medias/featureimages/19.jpg
+- /medias/featureimages/20.jpg
+- /medias/featureimages/21.jpg
+- /medias/featureimages/22.jpg
+- /medias/featureimages/23.jpg
   # default configs that the default policy for every articles/posts
   # default 配置文章的默认转载规则
 
@@ -375,12 +383,18 @@ reprint:
   default: cc_by
 
 
+
+
 # 雪花特效
 snow:
   enable: false
 
 baidu_push: true
 
-#Daovoice DaoCloud 在线沟通
-daovoice: true
-daovoice_app_id:  #“用户ID” //注意：用户ID不能是其他人的，要填写自己的，可以在刚刚复制的代码中找到用户id.
+# Online contact 在线客服 Daovoice 参考：http://dashboard.daovoice.io
+daovoice:  # 在线客服 Daovoice 参考：http://dashboard.daovoice.io
+  enable: true # 是否开启在线客服聊天
+  appid: 'xxx'  # 应用ID设置
+
+
+

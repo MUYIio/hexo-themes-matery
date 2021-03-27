@@ -10,19 +10,10 @@
 			"url": "/medias/music/Stay Alive.mp3",
 			"cover": "/medias/music/avatars/Stay Alive.jpg"
 	},{
-			"name": "Shame",
-			"artist": "Ciaran Lavery",
-			"url": "/medias/music/Shame.mp3",
-			"cover": "/medias/music/avatars/Shame.jpg"
- },{
 			"name": "Like Real People Do",
 			"artist": "Hozier",
 			"url": "/medias/music/Like Real People Do.mp3",
 			"cover": "/medias/music/avatars/Like Real People Do.jpg"
- },{
-		  "name": "涩",
-		  "artist": "纣王老胡",
-		  "url": "/medias/music/se.mp3",
-		  "cover": "/medias/music/avatars/se.jpg"
-	  }
+ }
+	  
 ]

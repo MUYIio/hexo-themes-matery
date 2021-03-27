@@ -24,4 +24,4 @@ layout: "contact"
 * **名称：**godxiaolong
 * **地址：**https://www.yashwlon.com
 * **简介：**Yshawlon
-* **头像：**https://muyiio.com/medias/avatars/avatar.jpg
+* **头像：**https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg

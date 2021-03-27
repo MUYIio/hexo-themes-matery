@@ -18,14 +18,12 @@
     "hexo-generator-search": "^2.4.0",
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
-    "hexo-helper-live2d": "^3.1.1",
     "hexo-permalink-pinyin": "^1.1.0",
     "hexo-prism-plugin": "^2.3.0",
     "hexo-renderer-ejs": "^0.3.1",
     "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "hexo-wordcount": "^6.0.1",
-    "live2d-widget-model-shizuku": "^1.0.5"
+    "hexo-wordcount": "^6.0.1"
   }
 }

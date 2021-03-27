@@ -16,7 +16,7 @@ hexo.extend.filter.register('after_render:html', function (htmlContent) {
         align-items: center;
         background: #FFF;
         text-align: center;
-        /* loaderÒ³ÃæÏûÊ§²ÉÓÃ½¥ÒþµÄ·½Ê½*/
+        /* loaderÒ³ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½Ê½*/
         -webkit-transition: opacity 1s ease;
         -moz-transition: opacity 1s ease;
         -o-transition: opacity 1s ease;
@@ -114,7 +114,7 @@ hexo.extend.filter.register('after_render:html', function (htmlContent) {
         opacity: 0;
         filter: alpha(opacity=0);
     }
-    /* logo³öÏÖ¶¯»­ */
+    /* logoï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ */
     @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
     @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
  </style>
@@ -123,12 +123,12 @@ hexo.extend.filter.register('after_render:html', function (htmlContent) {
     const loaded = function(){
        setTimeout(function(){
             const loader = document.getElementById("loading-container");
-            loader.className="fadeout" ;//Ê¹ÓÃ½¥ÒþµÄ·½·¨µ­³öloading page
+            loader.className="fadeout" ;//Ê¹ï¿½Ã½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½loading page
             // document.getElementById("body-wrap").style.display="flex";
             setTimeout(function(){
                 loader.style.display="none";
             },1000); 
-        },1000);//Ç¿ÖÆÏÔÊ¾loading page 1s  
+        },1000);//Ç¿ï¿½ï¿½ï¿½ï¿½Ê¾loading page 1s  
     };
     loaded();
 })()

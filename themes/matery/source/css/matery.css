@@ -311,7 +311,7 @@ mark {
 
 /*整体背景颜色，包括导航，移动导航，页脚，选项卡等。*/
 .bg-color {
-    background-image: linear-gradient(to right, #bf30ac 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #3fd9ff 0%, #5637c6 100%);
     opacity: 0.7;
 }
 
