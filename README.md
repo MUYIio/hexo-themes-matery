@@ -29,7 +29,7 @@ Fork我的博客仓库就能得到一模一样的网站啦[https://github.com/MU
 git clone git@github.com:MUYIio/hexo-themes-matery.git
 ```
 
-   2.删除.git文件夹，修改根目录source/CNAME中的内容
+   2.删除.git文件夹，如果有自定义域名请修改根目录source/CNAME中的内容
 
    3.打开根目录_config.yml修改仓库地址
 
