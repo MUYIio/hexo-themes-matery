@@ -46,7 +46,10 @@ git clone git@github.com:MUYIio/hexo-themes-matery.git
 2. **新增可换装换人物看板娘**
    - 将根目录_config.yml中enable改为true就可以了
 
+## 2021-05-25更新：
 
+1. **优化了 SEO ，使得网站更快收录**
+   - 进入 source/robots.txt 文件夹修改为自己的网站即可 
 
 ### 欢迎Star&Fork
 

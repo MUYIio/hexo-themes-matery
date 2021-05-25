@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /home/
+Allow: /archives/
+Allow: /about/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+Sitemap: https://xxxxx.cn/sitemap.xml
+Sitemap: https://xxxxx.cn/baidusitemap.xml
+

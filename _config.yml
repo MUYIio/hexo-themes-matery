@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.yshawlon.cn
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title.html
 permalink_defaults:
 
 # Directory
@@ -143,7 +143,7 @@ baidu_url_submit:
   count: 100
   host: 
   token: 
-  path: 
+  path: baidu_urls.txt
 
 
 
