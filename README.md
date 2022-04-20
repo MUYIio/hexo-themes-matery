@@ -52,5 +52,9 @@ git clone git@github.com:MUYIio/hexo-themes-matery.git
 1. **优化了 SEO ，使得网站更快收录**
    - 进入 source/robots.txt 文件夹修改为自己的网站即可 
 
+## 2022-04-20更新：
+
+1. **gitalk更新到1.72**
+
 ### 欢迎Star&Fork
 
